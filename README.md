@@ -1,2 +1,2 @@
 # CA-DGNN
-Detial code see master bench.
+Detial code in master branch.
