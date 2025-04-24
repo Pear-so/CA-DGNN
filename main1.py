@@ -47,10 +47,7 @@ class MyModel(nn.Module):
 # Experiment Main Function
 ##################################
 
-# target_column_index = 0
-taracc=[]
-Loss=[]
-def Experiment_Main(config):#主函数Experiment_Main
+def Experiment_Main(config):#Experiment_Main
     # Parameter
     FC_dim_1 = int(config['FC_dim_1'])
     FC_dim_2 = int(config['FC_dim_2'])
@@ -208,18 +205,16 @@ def Experiment_Main(config):#主函数Experiment_Main
                 print('Epoch :{}.'.format(step))
                 print('Source Accuracy: %1s'%source_acc)
                 print('Target Accuracy: %1s'%target_acc)
-                print('Cross-Entropy Loss: %1s'%(CE_loss.data.data.cpu().numpy()))#将cuda转化为cpu
-                print('Target Entropy Loss: %1s'%(Tar_Ent_loss.data.cpu().numpy()))#将cuda转化为cpu
-                print('CMMD: %1s'%(CMMD_loss.data.cpu().numpy()))#将cuda转化为cpu
-                # print('KB Loss: %1s'%(KB_loss.data.cpu().numpy()))
+                print('Cross-Entropy Loss: %1s'%(CE_loss.data.data.cpu().numpy()))
+                print('Target Entropy Loss: %1s'%(Tar_Ent_loss.data.cpu().numpy()))
+                print('CMMD: %1s'%(CMMD_loss.data.cpu().numpy()))
                 
-                print('Overall Loss: %1s'%(O_loss.data.cpu().numpy()))#将cuda转化为cpu
+                print('Overall Loss: %1s'%(O_loss.data.cpu().numpy()))
                 print('Current epoch [train & test] time cost: %1s Hour %1s Minutes %1s Seconds'%(hours,minute,second))
 
                 # empty network cache
                 torch.cuda.empty_cache()
 
-target_column_index=15
     ####################
     # Save results
     ####################
